@@ -1,0 +1,5 @@
+entity: Publisher
+items:
+  Publisher:
+    name: "TestPub"
+    type: "camera"

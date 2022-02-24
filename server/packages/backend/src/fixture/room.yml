@@ -1,0 +1,43 @@
+entity: Room
+items:
+  Room1:
+    name: "Raum 1"
+    maxPeople: 20
+    longitude1: 100
+    latitude1: 100
+    longitude2: 1000
+    latitude2: 2500
+
+  Room2:
+    name: "Raum 2"
+    maxPeople: 40
+    longitude1: 1000
+    latitude1: 1500
+    longitude2: 3500
+    latitude2: 3250
+
+  Room3:
+    name: "Raum 3"
+    maxPeople: 30
+    longitude1: 1000
+    latitude1: 250
+    longitude2: 2500
+    latitude2: 1500
+
+  Room4:
+    name: "Raum 4"
+    maxPeople: 10
+    longitude1: 250
+    latitude1: 2500
+    longitude2: 1000
+    latitude2: 3750
+
+  Room5:
+    name: "Raum 5"
+    maxPeople: 15
+    longitude1: 1000
+    latitude1: 3250
+    longitude2: 3000
+    latitude2: 3750
+
+

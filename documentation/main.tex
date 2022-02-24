@@ -1,0 +1,325 @@
+\documentclass[report]{scrartcl}
+
+% packages
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amstext} 
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{minted}
+\usepackage{array}
+%\usepackage{parskip}
+\usepackage[ngerman]{babel}
+\usepackage[dvipsnames]{xcolor}
+% Pseudocode
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{mathtools}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=black]{hyperref}
+\usepackage{ngerman} % English language
+\usepackage[utf8]{inputenc} % Uses the utf8 input encoding
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage[osf]{mathpazo} % Palatino as the main font
+\usepackage[backend=biber, style=ieee]{biblatex}
+\usepackage{csquotes}
+\usepackage{siunitx}
+\addbibresource{bibliography.bib}
+\linespread{1.15}\selectfont % Palatino needs some extra spacing, here 5% 
+\usepackage[
+  %showframe,% Seitenlayout anzeigen
+  left= 2cm,
+  right= 2cm,
+  top= 1.8 cm,
+  bottom=2.5cm,
+  %includeheadfoot
+]{geometry}
+
+% enable numbering for paragraphs
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\begin{document}
+
+
+\begin{titlepage}
+  \begin{center}
+    \includegraphics[]{fbilogo-2.png}
+    \vspace*{1cm}
+
+    \Large
+
+    Projekt: Systementwicklung \\
+    \textbf{Abschlussbericht} \\
+
+    \vspace{0.5cm}
+    \normalsize
+
+    \vspace{7cm}
+
+    \vspace{0.2cm}
+    \large
+    \textbf{RADACC} \\
+
+    \small{\textbf{R}adar \textbf{A}ided \textbf{D}etection and \textbf{A}nalysis of \textbf{C}rowds in \textbf{C}amera feeds}
+
+    \vspace{1.8cm}
+
+    \normalsize
+    Sören Hoock \\
+    Leon Mekschrat \\
+    Gregor Siano \\
+    Matthias Wallenstein \\
+    Nikolai Zimmermann
+
+    \vspace{4.cm}
+
+    \small{Betreuung durch}
+
+    Elke Hergenröther \\
+    Jens-Peter Akelbein
+
+  \end{center}
+\end{titlepage}
+
+%
+\thispagestyle{empty}
+\newpage
+{\hypersetup{linkcolor=black}
+  % or \hypersetup{linkcolor=black}, if the colorlinks=true option of hyperref is used
+  \tableofcontents
+}
+
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+
+\part{Projektidee}
+
+% Die ursprüngliche Idee, sowie ihre Entwicklung im Verlauf des Projektes und
+% ihre finale Version.
+
+Unsere erste Idee war es mithilfe einer Kamera, die an einem Engpunkt, wie
+einem Durchgang oder einer Unterführung, angebracht ist, zu zählen wie viele
+Menschen sich an der Stelle aufhalten. Darüber wollten wir Rückschlüsse ziehen
+ob es sich um eine kritische Masse handelt bei der eine Massenpanik auftreten
+könnte. Mithilfe eines Radar wollten wir die Geschwindigkeit der Masse
+bestimmen.
+
+Im Laufe des Projektes haben sich unsere Ziele verändert und schießlich haben
+wir uns dazu entschieden die Kamera zu nutzen um die Anzahl an Personen zu
+zählen, die eine imaginären Linie überschreiten. Das Radar wollten wir
+weiterhin nutzen um die Geschwindigkeit der Personen zu messen.
+
+Die erhobenen Daten sollen in einem Webinterface dargestellt werden und dem
+Nutzer die Möglichkeit bieten zu erkennen in welche Bereiche sich viele
+Personen aufhalten und ob deren Laufgeschwindigkeit höher ist als normal.
+
+\section{Forschungsfrage}
+
+% Forschungsfrage und ihre Entwicklung im Verlauf des Projekts
+% NOTE: Wie wichtig ist diese überhaupt?
+
+Am Anfang des Projektes haben wir eine Forschungsfrage formuliert:
+
+\textit{``Können über die Kombination von Radarsensoren und Kameras die
+  Bewegungs-Eigenschaften einer Menschenmenge bestimmt werden?''}
+
+Diese haben wir im Verlauf des Projektes weiter konkretisiert:
+
+\textit{``Kann über die Kombination von Radarsensoren und Kameras eine
+  Bereichsanalyse bereitgestellt werden, die automatisch Aussagen über das Risiko
+  für eine Massenpanik treffen kann, um damit Sicherheitspersonal zu
+  unterstützen?''}
+
+\part{Projektziele}
+
+Das Ziel des Projektes ist es mithilfe eines Doppler-Radars und einer Kamera
+Informationen über die Anzahl von Personen und deren Geschwindigkeit zu sammeln
+und in einem Webinterface darzustellen.
+
+\part{Umsetzung}
+
+\section{Architektur}
+
+% Detailliertes Architekturbild
+
+% Überblick über die Architektur
+
+\section{Kamera}
+
+% Fokus auf die Kamera im Architekturbild
+
+% Beschreibung der Hardware
+% Beschreibung des Algorithmus
+
+\section{Radar}
+
+% Fokus auf das Radar im Architekturbild
+
+Mit dem Radar wollten wir zunächst die Geschwindigkeit der verschiedenen
+Personen messen. Im laufe des Projektes haben wir festgestellt, dass das mit
+dem Radar was wir nutzen nicht so einfach ist einzelne Personen auszumachen.
+Deshalb haben wir uns entschieden die durschnittliche Geschwindigkeit zu
+messen.
+
+\subsection{Infineon BGT60TR13C}
+
+Das Radar was uns zur Verfügung gestellt wurde ist ein
+\textit{Frequency-Modulated Continuous-Wave} Radar im \qty{60}{\giga\hertz}
+Frequenzbereich vom Modell \textit{BGT60TR13C} von Infineon. Diese Radar
+verfügt über drei verschiedene Antennen was es ermöglicht den Messbereich in
+drei Segmente zu unterteilen. Um akkurat die Geschwindigkeit von mehreren
+Personen zu messen benötigen wir weit mehr als drei Segmente. Die
+durchschnittliche Geschwindigkeit des Messbereich zu erfassen ist dank des
+Dopplereffekts durchaus möglich, weswegen wir uns dafür entschieden haben.
+
+Das Radar selber ist auf einem Shield angebracht. Das Shield verfügt über einen
+Microchip, ein paar Status LEDs und einem USB Anschluss, über welchen wir Daten
+vom Radar erhalten können.
+
+Um das Radar über Software zu steuern haben wir das Radar Development Kit
+genutzt. Dieses beinhaltet auch ein paar Beispiele in Python auf denen wir
+letzendlich unser Programm basiert haben.
+
+\subsection{Erster Prototyp in Rust}
+
+Die erste Idee für eine Implementierung war in C oder einer vergleichbaren
+Sprache mit dem Radar zu kommunizieren. Der Vorteil im Vergleich zu Python ist
+die verbesserte Performanz des resultierenden Programms. Wir haben uns für Rust
+entschieden, da Rust mit den C Bibliotheken des RDKs kommunizieren kann,
+performant ist und Speichersicherheit verspricht.
+
+Mit dem in Rust entwickelten Prototypen konnten wir das Radar steuern und Daten
+empfangen. Als wir jedoch versucht haben die empfangenen Daten zu verarbeiten
+haben wir gemerkt wie wenig wir über Signalverarbeitung wissen. Im RDK ist eine
+API vorhanden die für uns perfekt ist jedoch haben wir es nicht hinbekommen
+diese zum laufen zu bekommen.
+
+Aus Zeitgründen haben wir uns für einen anderen Ansatz entschieden.
+
+\subsection{Finale Version in Python}
+
+Im RDK gibt es Beispiele in Python. Auf einem dieser Beispiele in welchem eine
+Range-Doppler Map erstellt wurde haben wir unser Programm basiert.
+Um das Hintergrundrauschen der Daten herauszufiltern haben wir eine konstanten
+Falschalarmraten Algorithmus genutzt. Von den resultierenden haben wir die
+durschnittliche Geschwindigkeit errechnet und diese an den MQTT
+Broker geschickt.
+
+\section{Zentraler Server}
+
+\subsection{Konzept}
+
+Unsere initiale Idee des zentralen Servers war ein einfaches Interface das den
+aktuellen Status der einzelnen Komponenten widerspiegelt. Dabei musste der
+zentrale Server nur die eingehenden Nachrichten empfangen und ausgeben können.
+In unserem initialen Design war der Server nicht anderes als ein MQTT Listener
+der einfach alle eingehenden Nachrichten ausgegeben hat.
+
+\subsubsection{Nachteile des ersten Design}
+
+Diese erste Designidee war kein wirklicher zentraler Server und mehr ein
+sondern nur ein weg die gesendeten Nachrichten abzuhören.
+
+Dies brachte einige Nachteile mit sich unter anderem gab es keinen Kontext zu
+Nachrichten. Was bedeutet das abhängig davon wann der das Programm gestartet
+wurden andere Informationen zu sehen waren.
+
+Wenn also zwei Personen zeitversetzt das Prskolnik09ogramm starteten waren
+unterschiedliche Zustände zu sehen.
+
+Des weiteren mussten die Analyse des Bereichs Zustand direkt in unsere Kamera
+und Radar Komponenten erfolgen was bedeutet das diese nicht nur zusätzliche
+Informationen wie die Bereichts Koordinaten speichern mussten sonder sich auch
+mit anderen Komponenten desselben Bereiches absprechen mussten.
+
+\subsubsection{Überarbeitetes Konzept}
+
+Wir wurden mit der Kamera Komponente um einiges schneller fertig als
+ursprünglich geplant was bedeutete das wir viele Ressourcen frei hatten um an
+anderen Teilen des Projekts zu arbeiten.
+
+Deswegen und wegen der vorher genannten Probleme mit unserem ersten Konzept
+haben wir uns entschieden unseren zentralen Server weiter auszubauen.
+
+Dabei haben wir die Aufgaben des zentralen Server konkreter definiert die
+Hauptaufgabe des zentralen Servers soll es sein die erfassten Daten der
+einzelnen Kamera und Radar Komponenten zu analysieren und visualisieren. Damit
+verlagern wir die analyse der erfassten Daten in eine zentrale Instanz die
+einen überblick über das gesamte System hat was es uns erlaubt auch Bereiche
+mit mehreren eingängen und Ausgängen zu überwachen.
+
+Der zentralen Server soll außerdem auch alle zusätzlich benötigten
+Informationen wie z.B. die maximale Anzahl an Personen in den Bereichen oder
+die zugehörigen Koordinaten verwalten. Was bedeutet das die einzelnen
+Komponenten nur noch wissen müssen für welchen Bereich sie zuständig sind und
+damit keine weiteren Informationen verwalten müssen.
+
+Diese Aufgaben haben wir dann nochmal in Front und Backend unterteilt das
+Backend ist in unserem System ausschließlich für Verwaltung der statischen
+Raumdaten verantwortlich während dessen das Frontend für das Empfangen,
+Analysieren und Darstellen der Daten zuständig ist wir treffen diese
+Entscheidung weil, uns die einzelnen Kamera und Radar Komponenten ca. alle 0,2
+Sekunden ihren aktuellen Zustand schicken und das in vielen Datenbankzugriffen
+enden würde was unser System unter Umständen verlangsamen könnte.
+
+\subsection{Genutzte Technologien}
+
+Die verwendete Programmiersprache ist Typescript und wir verwenden eine
+vielzahl an verschiedenen Frameworks die uns das Entwickeln einer Webseite
+vereinfachen. Für API Backend verwenden wir Express sowie eine MySql Datenbank.
+Als Grundlage des Frontends verwenden wir React. Zum Stylen nutzen Material UI
+und für das die Übersichtskarte Leaflet.js.
+
+\subsection{Verwalten der Statischen Bereich Informationen}
+
+Im Backend werden alle statischen Bereich Daten in einer MySql Datenbank
+gespeichert die dann über eine Rest API abgefragt werden können. Mit statischen
+Bereichs Daten sind alle Informationen über einen Bereich gemeint die sich
+nicht ständig ändern oder gar nicht ändern. Ins unserem Falle sind das die
+Felder.
+
+\begin{description}
+  \item[Id] Eine einzigartige Id die als Primärschlüssel dient.
+  \item[Name] Eine vom Kunden frei vergebener Name für den Bereich
+  \item[MaxPeople] Die maximale Anzahl an Personen die sich gleichzeitig in einem
+    Bereich aufhalten dürfen. (Beachten Sie, dass sich dieser Wert von Zeit zu Zeit
+    ändern könnte.)
+  \item[Koordinaten] Die Koordinaten sind aufgeteilt in 2 paare Latitude und Longitude
+    die jeweils gegenüberliegenden Eckpukte des Bereiches beschreiben
+\end{description}
+
+Theoretisch ist es möglich die Bereiche auch über die Rest API zu erstellen und
+aktualisieren aber wir haben der einfachheit halber die Daten manuell angelegt.
+
+\subsection{Zuordnung}
+
+Die erste Herausforderung war es die empfangen Nachrichten den dazugehörigen
+Bereichen zuzuordnen. Ziel war es dabei
+
+\subsection{Analysieren}
+
+\subsection{Visualisieren}
+
+
+\section{Simulator}
+
+% Erklärung über den Bedarf
+% Erklärung der Simulation
+
+\part{Endergebnis}
+\part{Installation}
+\part{Nutzung}
+\part{Retrospektive}
+
+
+% ----------------------------
+%          Bibliography 
+% ----------------------------
+\newpage
+\nocite{*}
+\printbibliography[heading=bibintoc, title={Literatur}]
+
+\end{document}

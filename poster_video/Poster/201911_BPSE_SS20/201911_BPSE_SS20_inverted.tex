@@ -1,0 +1,501 @@
+%!TEX TS-program = xelatex
+
+\newcommand{\publishdate}{02.02.2022}
+\newcommand{\publisher}{Kurz, EST, www.fbi.h-da.de}
+
+\documentclass[%
+textcolor=radacc_lightBlue,	% sets the default textcolor (defines '\stdtextcolor')
+pagecolor=radacc_darkblue,		% sets the background color
+%drawgrid	%				% draws a grid to support the layout process
+]{../estposter}
+
+\graphicspath{{../images/}}
+
+\hyphenation{Ein-gangs-schalt-ung}
+\hyphenation{pro-to-typ-ische}
+\hyphenation{Lauf-zeit-ver-schieb-ung}
+
+\usepackage{tikz}
+\usepackage{scrextend}
+\usepackage[ngerman]{babel}
+\usepackage{wasysym}
+\usepackage{textcomp}
+\usepackage{enumitem}
+
+
+\sloppy			% großzügige Formatierungsweise um: wenige Worttrennungen am Zeilenende, etwas größere Wortabstände innerhalb der Zeilen
+
+\begin{document}
+\placegraphics{50}{0}{0}{../../../visuals/radaccWhiteNioseBackground2_90Turned.png} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% title size and position %%%
+
+\renewcommand{\titleblock}[1]{%
+\begin{textblock}{26}(2,5) 
+\titleblockstyle #1
+\end{textblock}}
+
+%%% the subtitle %%%
+% arg2: subtitle
+\renewcommand{\subtitleblock}[1]{%
+\begin{textblock}{26}(2,8.5) 
+\subtitleblockstyle #1
+\end{textblock}}
+
+\renewcommand{\subtitleblockstyle}{%
+\customtextblockstyle{36pt}{38pt}%
+}
+
+\renewcommand{\fbilogo}[1]{%
+\placegraphics{6}{0.5}{39}{#1}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% to place text on the page use the
+%% 'textblock' environment
+%% the first argument is the width in cm 
+%% the second argument is the location (x,y) relative to top-left corner in cm
+%% 
+%% the following example place the text 'CONTENT' into a block of 5 cm with
+%% at 4 cm from the right side and 6 cm from the top side
+%\begin{textblock}{5}(4,6) 
+%CONTENT
+%\end{textblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% circle %%%
+
+\begin{textblock}{2.7}(20.5,4.5) 
+\begin{tikzpicture}
+\draw [draw=none, fill=radacc_lightererBlue] (0,0) circle [radius=\textwidth];
+\end{tikzpicture}
+\end{textblock}
+
+
+%\begin{textblock}{5.4}(20.5,5.7)
+\begin{textblock}{5.4}(20.7,5.7)
+%\customtextblockstyle{16}{18}
+\customtextblockstyle{22}{24}
+\color{radacc_lighterGray}
+\begin{center}
+\rotatebox{-12}{\textbf{im Winter-}}
+\end{center}
+\end{textblock}
+%\begin{textblock}{5.4}(20.5,6.5)
+\begin{textblock}{5.4}(20.4,6.5)
+%\customtextblockstyle{16}{18}
+\customtextblockstyle{22}{24}
+\color{radacc_lighterGray}
+\begin{center}
+\rotatebox{-12}{\textbf{semester '21}}
+\end{center}
+\end{textblock}
+%\begin{textblock}{5.4}(20.3,7.0)
+%\customtextblockstyle{24}{26}
+%\begin{center}
+%\rotatebox{-12}{\textbf{WS 19/20!}}
+%\end{center}
+%\end{textblock}
+
+%%% end circle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% titles  %%%
+
+\titleblock{\textcolor{radacc_blue}{Bachelor PSE}} % title
+\subtitleblock{\textcolor{radacc_blue}{\textbf{RADACC}}}
+\begin{textblock}{26}(2,10) 
+\customtextblockstyle{22}{24}
+\color{radacc_blue}
+\textbf{R}adar \textbf{A}ided \textbf{D}etection and \textbf{A}nalysis of \textbf{C}rowds in \small{(live)} \textbf{C}amera feeds	% subtitle
+\end{textblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% logo graphics
+
+%\placegraphics{10}{20}{-0.3}{LG0_fbi_w1111.eps}		% logo at upper right corner for non EST stuff
+\estlogo{LG0_est_s0111.eps}		% logo at upper right corner
+\fbilogo{LG0_fbi_r5005.eps}	% logo at lower left corner
+
+%%% Hessen Agentur %%%
+%\placegraphics{6}{13}{39.45}{Hessen_Agentur.jpg} % logo Hessen-Agentur
+%\placegraphics{4.5}{24.5}{39.45}{LOEWE_4C.jpg}	% logo Loewe-Projekt
+%\begin{textblock}{4.8}(19.25,39.45)	% Publizitaetsvorschrift Hessen-Agentur
+%\customtextblockstyle{6}{8}
+%Dieses Projekt (HA-Projekt-Nr.: 530/17-12) wird im Rahmen von Hessen ModellProjekte aus Mitteln der LOEWE – Landes-Offensive zur Entwicklung Wissenschaftlich-ökonomischer Exzellenz, Förderlinie 3: KMU-Verbundvorhaben gefördert.
+%\end{textblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\publicationblock
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% qrcode
+
+%\IfFileExists{qrcode.png}{\placegraphics{2.5}{12}{19.4}{qrcode.png}}{}
+%\begin{textblock}{2.5}(12,22) 					%% graphics title
+%\customtextblockstyle{10}{10}
+%\color{HDA_gray_0}
+%\textsuperscript{\bf{Projektwebseite}}
+%\end{textblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% graphics section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% the left graphics %%%
+
+%%%% the left graphfics
+
+\placegraphics{12.5}{2}{21.25}{../../../visuals/RADACC_schmal_transparent.png} 
+\begin{textblock}{21}(2.1,35.75) 					%% graphics title
+%\begin{flushright}
+\customtextblockstyle{10}{10}
+%\begin{rotate}{90}
+%\end{flushright}
+\end{textblock}
+%\begin{textblock}{12.5}(2.1,33.05) 						%% graphics source
+%\customtextblockstyle{10}{10}
+%\color{HDA_gray_100}
+%\textsuperscript{\ccLogo\ \ccAttribution\ \ccShareAlike\ Double Feature, http://creativecommons.org/licenses/by-sa/2.0}
+%\end{textblock}
+%\begin{textblock}{12.5}(2,33.4) 						%% graphics source
+%\customtextblockstyle{10}{10}
+%\color{HDA_gray_100}
+%\textsuperscript{http://creativecommons.org/licenses/by-sa/2.0}
+%\end{textblock}
+
+
+%%%% the left upper left graphfics
+%%\placegraphics{6}{2}{25.5}{DoubleFeature_CC-BY-SA-2.0.jpg} 
+%\begin{textblock}{6}(2,29.4) 					%% graphics title
+%%\begin{flushright}
+%\customtextblockstyle{10}{10}
+%%\begin{rotate}{90}
+%\color{HDA_gray_0}
+%\textsuperscript{\bf{Nao-Gruppe 1}}
+%%\end{rotate}
+%%\end{flushright}
+%\end{textblock}
+%\begin{textblock}{8.5}(4.1,29.4) 						%% graphics source
+%\customtextblockstyle{10}{10}
+%\color{HDA_gray_100}
+%%\textsuperscript{\ccLogo\ \ccAttribution\ \ccShareAlike\ Gareth Halfacree, CC BY-SA 2.0}
+%\end{textblock}
+%\begin{textblock}{8.5}(4.1,29.55) 						%% graphics source
+%\customtextblockstyle{10}{10}
+%\color{HDA_gray_100}
+%%\textsuperscript{http://creativecommons.org/licenses/by-sa/2.0}
+%\end{textblock}
+%
+%
+%%%% the left upper right graphics %%%
+%%\placegraphics{6}{8.5}{25.5}{nao2.png} 
+%\begin{textblock}{6}(8.5,29.4)  					%% graphics title
+%%\begin{flushright}
+%\customtextblockstyle{10}{10}
+%%\begin{rotate}{90}
+%\color{HDA_gray_0}
+%\textsuperscript{\bf{Nao-Gruppe 2}}
+%%\end{rotate}
+%%\end{flushright}
+%\end{textblock}
+%%\begin{textblock}{8.9}(17.4,17) 						%% graphics source
+%%\customtextblockstyle{10}{10}
+%%\color{HDA_gray_100}
+%%\textsuperscript{Christof Ebert, Capers Jones, "Embedded Software: Facts, Figures, and Future"}
+%%\end{textblock}
+%%\begin{textblock}{8.9}(17.4,17.25) 						%% graphics source
+%%\customtextblockstyle{10}{10}
+%%\color{HDA_gray_100}
+%%\textsuperscript{http://doi.ieeecomputersociety.org/10.1109/MC.2009.118}
+%%\end{textblock}
+%
+%%%% the left lower left graphics %%%
+%
+%%\placegraphics{6}{2}{30}{sphero3.png} 
+%\begin{textblock}{6}(2,33.85) 					%% graphics title
+%%\begin{flushright}
+%\customtextblockstyle{10}{10}
+%%\begin{rotate}{90}
+%\color{HDA_gray_0}
+%\textsuperscript{\bf{Sphero-Gruppe}}
+%%\end{rotate}
+%%\end{flushright}
+%\end{textblock}
+%\begin{textblock}{6}(3,31) 						%% graphics source
+%\customtextblockstyle{10}{10}
+%\color{HDA_gray_0}
+%%\textsuperscript{\ccLogo\ \ccAttribution\ \ccShareAlike\ Gareth Halfacree, CC BY-SA 2.0}
+%\end{textblock}
+%\begin{textblock}{8.5}(17.6,27.55) 						%% graphics source
+%\customtextblockstyle{10}{10}
+%\color{HDA_gray_100}
+%%\textsuperscript{http://creativecommons.org/licenses/by-sa/2.0}
+%\end{textblock}
+%
+%%%% the left lower right graphics %%%
+%%\placegraphics{6}{8.5}{30}{cozmo4.png} 
+%\begin{textblock}{6}(8.5,33.9)  					%% graphics title
+%%\begin{flushright}
+%\customtextblockstyle{10}{10}
+%%\begin{rotate}{90}
+%\color{HDA_gray_0}
+%\textsuperscript{\bf{Cozmo-Gruppe}}
+%%\end{rotate}
+%%\end{flushright}
+%\end{textblock}
+%%\begin{textblock}{8.9}(17.4,17) 						%% graphics source
+%%\customtextblockstyle{10}{10}
+%%\color{HDA_gray_100}
+%%\textsuperscript{Christof Ebert, Capers Jones, "Embedded Software: Facts, Figures, and Future"}
+%%\end{textblock}
+%%\begin{textblock}{8.9}(17.4,17.25) 						%% graphics source
+%%\customtextblockstyle{10}{10}
+%%\color{HDA_gray_100}
+%%\textsuperscript{http://doi.ieeecomputersociety.org/10.1109/MC.2009.118}
+%%\end{textblock}
+
+
+
+% IMAGEEEEE
+
+%%% the right graphics %%%
+\placegraphics{12.5}{15.5}{13}{../../../visuals/exampleImage.png} 
+\begin{textblock}{12.5}(22.5,24)  					%% graphics title
+%\begin{flushright}
+\customtextblockstyle{10}{10}
+%\begin{rotate}{90}
+%\end{rotate}
+%\end{flushright}
+\end{textblock}
+
+
+%%% the right graphics %%%
+\placegraphics{12.5}{15.5}{24}{../../../visuals/radaccDashboardNew2.png} 
+\begin{textblock}{12.5}(22.5,24)  					%% graphics title
+%\begin{flushright}
+\customtextblockstyle{10}{10}
+%\begin{rotate}{90}
+%\end{rotate}
+%\end{flushright}
+\end{textblock}
+
+%\begin{textblock}{8.9}(17.4,17.25) 						%% graphics source
+%\customtextblockstyle{10}{10}
+%\color{HDA_gray_100}
+%\textsuperscript{http://doi.ieeecomputersociety.org/10.1109/MC.2009.118}
+%\end{textblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% text section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\setlist[itemize]{noitemsep}
+%%%%%%%%%%%%%%%%%%%%%%%
+%%% left text block %%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{textblock}{12.5}(2,13)
+
+\customtextblockstyle{16}{20}
+\color{radacc_blue}
+\textbf{Warnung vor Massenpaniken}
+\par\smallskip
+
+\customtextblockstyle{10}{12}
+\color{radacc_lightBlue}
+Eine Massenpanik ist ein Ereignis, bei dem eine große Anzahl von Menschen auf beengtem Raum in Panik verfällt. Dabei kommt es zu unkontrollierten Fluchtbewegungen, die bei wenig vorhandenem Platz eine große Gefahr darstellen. Um dem Vorzubeugen kann man Bereiche z.B. über Live-Kamera-Feeds beobachten um frühzeitig gefährliche Situationen zu erkennen. 
+
+\par\smallskip
+
+Unsere Gedanken:
+\begin{itemize}[leftmargin=10pt, rightmargin=10pt, topsep=3pt,itemsep=1pt,partopsep=1pt, parsep=1pt]
+\item \textbf{Zugänge} oder \textbf{Tunnel} beobachten, um passierende Personen zu zählen
+		
+	 	\begin{itemize}
+			\item[•] Dadurch Personenanzahl für den dahinter liegenden Bereich bestimmen
+		\end{itemize}
+	
+\item Zusätzlich Geschwindigkeit am Eingang des Bereichs messen
+		
+	 	\begin{itemize}
+			\item[•] Erhöhte Geschwindigkeit \emph{kann} auf kritische Situation hindeuten
+		\end{itemize}
+		
+\item Durch die Parameter versuchen Hinweise auf kritische Situationen zu geben
+\item Dadurch möglicherweise schneller und besser Präventionsmaßnahmen treffen		
+\end{itemize}
+
+
+
+
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\bigskip
+
+
+\customtextblockstyle{16}{20}
+\color{radacc_blue}
+\textbf{Automatisierte Analyse }
+\par\smallskip
+
+\customtextblockstyle{10}{12}
+\color{radacc_lightBlue}
+Unsere Idee:
+\begin{itemize}[leftmargin=10pt, rightmargin=10pt, topsep=3pt,itemsep=1pt,partopsep=1pt, parsep=1pt]
+	\item \textbf{Kamera} über Eingang
+		
+	 	\begin{itemize}
+			\item[•] trackt Personenanzahl vom dahinterliegenden Bereich
+		\end{itemize}
+		
+	\item \textbf{Radar} über Eingang
+	 	\begin{itemize}
+			\item[•] ermittelt durchschnittliche Geschwindigkeit der vorbeilaufenden Personen
+		\end{itemize}
+
+	\item Ermittelte Daten in \textbf{zentraler Stelle} zusammenführen und darstellen
+	
+		\begin{itemize}
+			\item[•] Übersicht der Bereiche mit Informationen über:
+			
+				\begin{itemize}
+					\item[•] \textbf{Personenanzahl} im Bereich
+					\item[•] \textbf{Geschwindigkeit} mit der sich in bzw. aus dem Bereich bewegt wird
+				\end{itemize}
+				
+			\item[•] soll Sicherheitspersonal visuelle Stütze durch Einfärben kritischer Bereiche geben
+			\item[•] Bereiche gelten als kritisch bei besonders hoher Personenanzahl oder Geschwindigkeit
+		\end{itemize}
+
+\end{itemize}
+
+
+\begin{addmargin}[0pt]{30mm}
+\end{addmargin}
+
+
+
+\end{textblock}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%% right text block %%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{textblock}{12.5}(15.5,20.2)
+
+\customtextblockstyle{8}{12}
+\color{radacc_blue}
+Beispielhafte Aufnahme der Kamera.
+\par\smallskip
+
+\customtextblockstyle{16}{20}
+\color{radacc_blue}
+\textbf{Analyseergebnisse in der Web-Oberfläche}
+\par\smallskip
+
+\customtextblockstyle{10}{12}
+\color{radacc_lightBlue}
+
+\begin{itemize}[leftmargin=10pt, rightmargin=10pt, topsep=3pt,itemsep=1pt,partopsep=1pt, parsep=1pt]
+\item Umsetzung von Proof-of-Concept mit eigener Kamera und Radarchip von Infineon
+		
+\item Darstellung der durch den zentralen Server von Kamera und Radar gesammelten Daten in Web-Oberfläche.
+
+\end{itemize}
+
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\bigskip
+\par\medskip
+
+\customtextblockstyle{8}{12}
+\color{radacc_blue}
+Darstellung der Analysedaten in einer Web-Oberfläche
+\par\smallskip
+
+\customtextblockstyle{16}{20}
+\color{radacc_blue}
+\textbf{Ergebnis}
+\par\smallskip
+
+\customtextblockstyle{10}{12}
+\color{radacc_lightBlue}
+Während dem Semester ist es uns gelungen, das System als Proof-of-Concept mit allen geplanten Komponenten zu implementieren. Pandemiebedingt konnten Radarchip und Kamera nicht in einem realen Umfeld miteinander getestet werden. Um die Funktionstüchtigkeit des zentralen Servers auch mit größeren Daten sicherzustellen wurde dieser mit Nachrichten von einer einfachen Simulation getestet. Während insbesondere die Kamera-Komponente hilfreiche Informationen liefert, konnten mit der Radar-Komponente lediglich Informationen über die Geschwindigkeiten erhalten werden, welche eine eher geringe Aussagekraft bei der \emph{Vorhersage} von kritischen Situationen haben.
+
+%\begin{addmargin}[0pt]{45mm}
+%\end{addmargin}
+\par\medskip
+
+\customtextblockstyle{13}{20}
+\color{radacc_blue}
+\textbf{Team}
+\par\smallskip
+
+\customtextblockstyle{10}{12}
+\color{radacc_lightBlue}
+Sören Hoock, Leon Mekschrat, Gregor Siano, Matthias Wallenstein, Nikolai Zimmermann.
+
+
+\par\smallskip
+
+
+\customtextblockstyle{13}{20}
+\color{radacc_blue}
+\textbf{Dozierende}
+\par\smallskip
+
+\customtextblockstyle{10}{12}
+\color{radacc_lightBlue}
+Prof. Dr. Elke Hergenröther
+
+\customtextblockstyle{10}{12}
+\color{radacc_lightBlue}
+Prof. Dr. Jens-Peter Akelbein
+\par\smallskip
+
+\par\medskip
+
+
+%\customtextblockstyle{16}{20}
+%\color{radacc_blue}
+%\textbf{Die Termine}
+%\par\smallskip
+%
+%\customtextblockstyle{10}{12}
+%\color{radacc_lightBlue}
+%Blockveranstaltung am Ende der vorlesungsfreien Zeit im September! 
+%\par\smallskip
+%\textbf{Kickoff-Veranstaltung: \textcolor{white}27.08.19}	\\
+%\textbf{Blockphase: \textcolor{white}09.-20.09.19}	\\
+%\textbf{Abschlusspräsentation: \textcolor{white}26.09.19}
+
+\par\bigskip
+\par\bigskip
+\par\bigskip
+
+
+
+
+
+\end{textblock}
+
+\end{document}
+
+%% EOF %%

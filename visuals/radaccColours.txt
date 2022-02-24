@@ -1,0 +1,9 @@
+Radacc colours:
+
+	- evenLighterBlue: 	1f3e66
+	- lightestBlue: 	1A3253
+	- darkestBlue: 		0E223D
+	- mediumBlue: 		0F2441
+	- mainBlue: 		11294A
+	- darkGray: 		595959/525252
+	- lightGray: 		B7BAB7/B4B7B4
